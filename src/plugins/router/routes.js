@@ -5,31 +5,31 @@ export const routes = [
     component: () => import('@/layouts/default.vue'),
     children: [
       {
-        path: '/dashboard',
+        path: 'dashboard',
         component: () => import('@/pages/dashboard.vue'),
       },
       {
-        path: '/account-settings',
+        path: 'account-settings',
         component: () => import('@/pages/account-settings.vue'),
       },
       {
-        path: '/typography',
+        path: 'typography',
         component: () => import('@/pages/typography.vue'),
       },
       {
-        path: '/icons',
+        path: 'icons',
         component: () => import('@/pages/icons.vue'),
       },
       {
-        path: '/cards',
+        path: 'cards',
         component: () => import('@/pages/cards.vue'),
       },
       {
-        path: '/tables',
+        path: 'tables',
         component: () => import('@/pages/tables.vue'),
       },
       {
-        path: '/form-layouts',
+        path: 'form-layouts',
         component: () => import('@/pages/form-layouts.vue'),
       },
     ],
@@ -51,5 +51,9 @@ export const routes = [
         component: () => import('@/pages/[...error].vue'),
       },
     ],
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/dashboard' 
   },
 ]
